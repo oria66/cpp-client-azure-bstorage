@@ -14,3 +14,27 @@ SOURCES += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DEFINES += "_GLIBCXX_USE_CXX11_ABI=1"
+
+# Casablanca
+
+LIBS += -lcpprest
+INCLUDEPATH += /usr/local/include
+
+## Azure Blob Storage Client
+
+LIBS += -lazurestorage
+INCLUDEPATH += /usr/local/include
+
+LIBS += -lboost_system \
+-lssl \
+-lcrypto \
+-luuid \
+-lxml2 \
+-lhsm_security_client \
+-luhttp \
+-lparson \
+-lserializer \
+-luamqp \
+-lumock_c \
